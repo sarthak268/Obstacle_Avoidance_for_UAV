@@ -582,6 +582,19 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named markPoints
+
+# Build rule for target.
+markPoints: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 markPoints
+.PHONY : markPoints
+
+# fast build rule for target.
+markPoints/fast:
+	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/build
+.PHONY : markPoints/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -639,6 +652,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... markPoints"
 	@echo "... sensor_msgs_generate_messages_eus"
 .PHONY : help
 

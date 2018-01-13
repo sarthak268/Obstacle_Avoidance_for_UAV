@@ -541,6 +541,21 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+map/CMakeFiles/markPoints.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/markPoints.dir/rule
+.PHONY : map/CMakeFiles/markPoints.dir/rule
+
+# Convenience name for target.
+markPoints: map/CMakeFiles/markPoints.dir/rule
+
+.PHONY : markPoints
+
+# fast build rule for target.
+markPoints/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/build
+.PHONY : markPoints/fast
+
+# Convenience name for target.
 map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -582,6 +597,33 @@ src/currentXY.cpp.s:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.s
 .PHONY : src/currentXY.cpp.s
 
+src/markPoints.o: src/markPoints.cpp.o
+
+.PHONY : src/markPoints.o
+
+# target to build an object file
+src/markPoints.cpp.o:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o
+.PHONY : src/markPoints.cpp.o
+
+src/markPoints.i: src/markPoints.cpp.i
+
+.PHONY : src/markPoints.i
+
+# target to preprocess a source file
+src/markPoints.cpp.i:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/src/markPoints.cpp.i
+.PHONY : src/markPoints.cpp.i
+
+src/markPoints.s: src/markPoints.cpp.s
+
+.PHONY : src/markPoints.s
+
+# target to generate assembly for a file
+src/markPoints.cpp.s:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/src/markPoints.cpp.s
+.PHONY : src/markPoints.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -620,10 +662,14 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
+	@echo "... markPoints"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... src/currentXY.o"
 	@echo "... src/currentXY.i"
 	@echo "... src/currentXY.s"
+	@echo "... src/markPoints.o"
+	@echo "... src/markPoints.i"
+	@echo "... src/markPoints.s"
 .PHONY : help
 
 

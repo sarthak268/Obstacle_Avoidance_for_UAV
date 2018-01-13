@@ -70,6 +70,7 @@ map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/ros/w
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
+map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
 map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/MinMax.h

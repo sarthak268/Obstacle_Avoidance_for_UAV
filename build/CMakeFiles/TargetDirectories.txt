@@ -51,4 +51,5 @@
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/list_install_components.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/markPoints.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/sensor_msgs_generate_messages_eus.dir

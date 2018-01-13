@@ -1,5 +1,6 @@
 #include <ros/ros.h>
 #include <sensor_msgs/NavSatFix.h>
+#include <std_msgs/Float64.h>
 #include <math.h>
 #include <geometry_msgs/Point.h>
 #include <tf/transform_datatypes.h>
@@ -61,9 +62,21 @@ int main(int argc, char** argv)
 	
 	ros::Subscriber global_position_sub = nh.subscribe("/mavros/global_position/global",10,global_position_callback); 
 	ros::Publisher currentXY_pub = nh.advertise<geometry_msgs::Point>("currentXY",10);
+	ros::Publisher referenceLong_pub = nh.advertise<std_msgs::Float64>("referenceLong",10);
+	ros::Publisher referenceLat_pub = nh.advertise<std_msgs::Float64>("referenceLat",10);
 
 	while (ros::ok())
 	{
+		currentXY_pub.publish(current);
+		
+		std_msgs::Float64 reference_lat_ra;
+		reference_lat_ra.data = reference_lat_rad; 
+		referenceLat_pub.publish(reference_lat_ra);
+
+		std_msgs::Float64 reference_long_ra;
+		reference_long_ra.data = reference_long_rad; 
+		referenceLong_pub.publish(reference_long_ra);
+
 		spin();
 	}
 

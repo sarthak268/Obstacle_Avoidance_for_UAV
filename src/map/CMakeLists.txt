@@ -137,6 +137,8 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 
 add_executable(currentXY src/currentXY.cpp)
+add_executable(markPoints src/markPoints.cpp)
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,6 +152,9 @@ add_executable(currentXY src/currentXY.cpp)
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(currentXY
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(markPoints
    ${catkin_LIBRARIES}
  )
 

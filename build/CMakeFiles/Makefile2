@@ -307,6 +307,7 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 
 # Convenience name for "all" pass in the directory.
 map/all: map/CMakeFiles/currentXY.dir/all
+map/all: map/CMakeFiles/markPoints.dir/all
 
 .PHONY : map/all
 
@@ -336,6 +337,7 @@ map/clean: map/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 map/clean: map/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 map/clean: map/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 map/clean: map/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+map/clean: map/CMakeFiles/markPoints.dir/clean
 map/clean: map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 .PHONY : map/clean
@@ -1147,6 +1149,43 @@ map/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: map/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target map/CMakeFiles/markPoints.dir
+
+# All Build rule for target.
+map/CMakeFiles/markPoints.dir/all:
+	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/depend
+	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=7,8 "Built target markPoints"
+.PHONY : map/CMakeFiles/markPoints.dir/all
+
+# Include target in all.
+all: map/CMakeFiles/markPoints.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+map/CMakeFiles/markPoints.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/markPoints.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 0
+.PHONY : map/CMakeFiles/markPoints.dir/rule
+
+# Convenience name for target.
+markPoints: map/CMakeFiles/markPoints.dir/rule
+
+.PHONY : markPoints
+
+# clean rule for target.
+map/CMakeFiles/markPoints.dir/clean:
+	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/clean
+.PHONY : map/CMakeFiles/markPoints.dir/clean
+
+# clean rule for target.
+clean: map/CMakeFiles/markPoints.dir/clean
 
 .PHONY : clean
 
