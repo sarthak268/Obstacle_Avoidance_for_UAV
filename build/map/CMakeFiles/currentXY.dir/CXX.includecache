@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sarthak/Desktop/Aurora/aurora_ws/src/map/src/map.cpp
+/home/sarthak/Desktop/Aurora/aurora_ws/src/map/src/currentXY.cpp
 ros/ros.h
 -
 sensor_msgs/NavSatFix.h

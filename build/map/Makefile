@@ -90,17 +90,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -122,6 +111,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -164,6 +164,21 @@ preinstall/fast:
 depend:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+map/CMakeFiles/currentXY.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/currentXY.dir/rule
+.PHONY : map/CMakeFiles/currentXY.dir/rule
+
+# Convenience name for target.
+currentXY: map/CMakeFiles/currentXY.dir/rule
+
+.PHONY : currentXY
+
+# fast build rule for target.
+currentXY/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/build
+.PHONY : currentXY/fast
 
 # Convenience name for target.
 map/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
@@ -314,21 +329,6 @@ geometry_msgs_generate_messages_lisp: map/CMakeFiles/geometry_msgs_generate_mess
 geometry_msgs_generate_messages_lisp/fast:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make map/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-map/CMakeFiles/map.dir/rule:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/map.dir/rule
-.PHONY : map/CMakeFiles/map.dir/rule
-
-# Convenience name for target.
-map: map/CMakeFiles/map.dir/rule
-
-.PHONY : map
-
-# fast build rule for target.
-map/fast:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/map.dir/build.make map/CMakeFiles/map.dir/build
-.PHONY : map/fast
 
 # Convenience name for target.
 map/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -555,32 +555,32 @@ sensor_msgs_generate_messages_eus/fast:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
-src/map.o: src/map.cpp.o
+src/currentXY.o: src/currentXY.cpp.o
 
-.PHONY : src/map.o
+.PHONY : src/currentXY.o
 
 # target to build an object file
-src/map.cpp.o:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/map.dir/build.make map/CMakeFiles/map.dir/src/map.cpp.o
-.PHONY : src/map.cpp.o
+src/currentXY.cpp.o:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.o
+.PHONY : src/currentXY.cpp.o
 
-src/map.i: src/map.cpp.i
+src/currentXY.i: src/currentXY.cpp.i
 
-.PHONY : src/map.i
+.PHONY : src/currentXY.i
 
 # target to preprocess a source file
-src/map.cpp.i:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/map.dir/build.make map/CMakeFiles/map.dir/src/map.cpp.i
-.PHONY : src/map.cpp.i
+src/currentXY.cpp.i:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.i
+.PHONY : src/currentXY.cpp.i
 
-src/map.s: src/map.cpp.s
+src/currentXY.s: src/currentXY.cpp.s
 
-.PHONY : src/map.s
+.PHONY : src/currentXY.s
 
 # target to generate assembly for a file
-src/map.cpp.s:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/map.dir/build.make map/CMakeFiles/map.dir/src/map.cpp.s
-.PHONY : src/map.cpp.s
+src/currentXY.cpp.s:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.s
+.PHONY : src/currentXY.cpp.s
 
 # Help Target
 help:
@@ -591,9 +591,10 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... test"
+	@echo "... currentXY"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -604,7 +605,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... map"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
@@ -621,9 +621,9 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... src/map.o"
-	@echo "... src/map.i"
-	@echo "... src/map.s"
+	@echo "... src/currentXY.o"
+	@echo "... src/currentXY.i"
+	@echo "... src/currentXY.s"
 .PHONY : help
 
 

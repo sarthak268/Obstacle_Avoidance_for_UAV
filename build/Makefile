@@ -257,6 +257,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named currentXY
+
+# Build rule for target.
+currentXY: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 currentXY
+.PHONY : currentXY
+
+# fast build rule for target.
+currentXY/fast:
+	$(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/build
+.PHONY : currentXY/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
 
 # Build rule for target.
@@ -385,19 +398,6 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 geometry_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f map/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make map/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named map
-
-# Build rule for target.
-map: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 map
-.PHONY : map
-
-# fast build rule for target.
-map/fast:
-	$(MAKE) -f map/CMakeFiles/map.dir/build.make map/CMakeFiles/map.dir/build
-.PHONY : map/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
@@ -614,6 +614,7 @@ help:
 	@echo "... test"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... currentXY"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -624,7 +625,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... map"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
