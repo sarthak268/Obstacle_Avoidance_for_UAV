@@ -19,6 +19,12 @@ math.h
 -
 visualization_msgs/Marker.h
 -
+iostream
+-
+fstream
+-
+string
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

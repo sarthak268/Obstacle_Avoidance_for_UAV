@@ -11,6 +11,9 @@
 #include <vector>
 #include <math.h>
 #include <visualization_msgs/Marker.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace ros;
 using namespace std;
@@ -19,8 +22,10 @@ double referenceLat;
 double referenceLong;
 double pi = 3.14;
 visualization_msgs::Marker points;
+visualization_msgs::Marker obstacles;
+visualization_msgs::Marker waypoints;
 
-int my_map[101][101] = {0};
+//int my_map[101][101] = {0};
 
 double toRad(double deg)
 {
@@ -44,31 +49,72 @@ geometry_msgs::Point toXY(double longitude, double latitude)
 
 void readWaypointsFile()
 {
-
+	std::ifstream infile("waypoints.txt");
+	double x, y;
+	while (infile >> x >> y)
+	{
+		waypoints.header.frame_id = "/waypoints";
+		waypoints.header.stamp = ros::Time::now();
+		waypoints.ns = "waypoints";
+		waypoints.action = visualization_msgs::Marker::ADD;
+		waypoints.pose.orientation.w = 1;
+		waypoints.id = 1;
+		waypoints.type = visualization_msgs::Marker::POINTS;
+		waypoints.scale.x = 0.1;
+		waypoints.scale.y = 0.1;
+		waypoints.color.g = 1;
+		waypoints.color.a = 1;
+		geometry_msgs::Point wp;
+		wp.x = x;
+		wp.y = y;
+		waypoints.points.push_back(wp);
+	}
 }
 
 void readObstacleFile()
-{
-
+{	
+	std::ifstream infile("obstacle.txt");
+	double x, y, r;
+	while (infile >> x >> y >> r)
+	{
+		obstacles.header.frame_id = "/obstacles";
+		obstacles.header.stamp = ros::Time::now();
+		obstacles.ns = "obstacle points";
+		obstacles.action = visualization_msgs::Marker::ADD;
+		obstacles.id = 2;
+		obstacles.type = visualization_msgs::Marker::CYLINDER;
+		obstacles.pose.position.x = x;
+		obstacles.pose.position.y = y;
+		obstacles.pose.position.z = 0;
+		obstacles.pose.orientation.x = 0;
+		obstacles.pose.orientation.y = 0;
+		obstacles.pose.orientation.z = 0;
+		obstacles.pose.orientation.w = 1;
+		obstacles.scale.x = 2*r;
+		obstacles.scale.y = 2*r;
+		obstacles.scale.z = 10;
+		obstacles.color.r = 1;
+		obstacles.color.a = 1;
+	}
 }
 
 void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 {
 	double x = pt->x;
 	double y = pt->y;
-	int roundx = int(x);
-	int roundy = int(y);
-	my_map[51+roundx][51+roundy] = 1;
+	// int roundx = int(x);
+	// int roundy = int(y);
+	// my_map[51+roundx][51+roundy] = 1;
 
 	points.header.frame_id = "/currentXY";
 	points.header.stamp = ros::Time::now();
 	points.ns = "currentXY points";
 	points.action = visualization_msgs::Marker::ADD;
-	points.pose.orientation.w = 1;
+	points.pose.orientation.w = 0;
 	points.id = 0;
 	points.type = visualization_msgs::Marker::POINTS;
-	points.scale.x = 0.5;
-	points.scale.y = 0.5;
+	points.scale.x = 0.1;
+	points.scale.y = 0.1;
 	points.color.b = 1;
 	points.color.a = 1;
 	geometry_msgs::Point p;
@@ -97,9 +143,13 @@ int main(int argc, char** argv)
 	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
 	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
+	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);
+	ros::Publisher waypoints_vis = nh.advertise<visualization_msgs::Marker>("waypoints_vis",10);
 
 	while (ros::ok())
 	{	
+		currentXY_vis.publish(points);
+		obstacle_vis.publish(obstacles);
 		spin();
 	}
 }
