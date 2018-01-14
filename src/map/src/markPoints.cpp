@@ -2,7 +2,7 @@
 0 - unknown(white)
 1 - current(blue)
 2 - waypoints(green)
-3 - obstacles(red)
+3 - obstacles(red)s
 */
 
 #include <ros/ros.h>
@@ -10,6 +10,7 @@
 #include <geometry_msgs/Point.h>
 #include <vector>
 #include <math.h>
+#include <visualization_msgs/Marker.h>
 
 using namespace ros;
 using namespace std;
@@ -17,6 +18,7 @@ using namespace std;
 double referenceLat;
 double referenceLong;
 double pi = 3.14;
+visualization_msgs::Marker points;
 
 int my_map[101][101] = {0};
 
@@ -57,6 +59,22 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 	int roundx = int(x);
 	int roundy = int(y);
 	my_map[51+roundx][51+roundy] = 1;
+
+	points.header.frame_id = "/currentXY";
+	points.header.stamp = ros::Time::now();
+	points.ns = "currentXY points";
+	points.action = visualization_msgs::Marker::ADD;
+	points.pose.orientation.w = 1;
+	points.id = 0;
+	points.type = visualization_msgs::Marker::POINTS;
+	points.scale.x = 0.5;
+	points.scale.y = 0.5;
+	points.color.b = 1;
+	points.color.a = 1;
+	geometry_msgs::Point p;
+	p.x = x;
+	p.y = y;
+	points.points.push_back(p);
 }
 
 void referenceLong_callback(const std_msgs::Float64::ConstPtr& longref)
@@ -78,4 +96,10 @@ int main(int argc, char** argv)
 	ros::Subscriber currentXY_sub = nh.subscribe("currentXY",10,markCurrent);
 	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
+	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
+
+	while (ros::ok())
+	{	
+		spin();
+	}
 }

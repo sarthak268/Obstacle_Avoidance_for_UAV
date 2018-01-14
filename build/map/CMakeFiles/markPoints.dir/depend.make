@@ -3,6 +3,9 @@
 
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /home/sarthak/Desktop/Aurora/aurora_ws/src/map/src/markPoints.cpp
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -59,7 +62,10 @@ map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/std_msgs/ColorRGBA.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/visualization_msgs/Marker.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 map/CMakeFiles/markPoints.dir/src/markPoints.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

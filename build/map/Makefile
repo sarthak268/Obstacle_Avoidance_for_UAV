@@ -181,6 +181,36 @@ currentXY/fast:
 .PHONY : currentXY/fast
 
 # Convenience name for target.
+map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make map/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
 map/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : map/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
@@ -391,6 +421,21 @@ roscpp_generate_messages_lisp/fast:
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
+map/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : map/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: map/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make map/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 map/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 .PHONY : map/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
@@ -404,6 +449,21 @@ geometry_msgs_generate_messages_nodejs: map/CMakeFiles/geometry_msgs_generate_me
 geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make map/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make map/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 map/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
@@ -556,6 +616,21 @@ markPoints/fast:
 .PHONY : markPoints/fast
 
 # Convenience name for target.
+map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_nodejs: map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -637,6 +712,8 @@ help:
 	@echo "... install/strip"
 	@echo "... test"
 	@echo "... currentXY"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -651,7 +728,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
@@ -663,6 +742,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
 	@echo "... markPoints"
+	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... src/currentXY.o"
 	@echo "... src/currentXY.i"
