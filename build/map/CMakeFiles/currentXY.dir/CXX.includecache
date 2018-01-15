@@ -21,6 +21,8 @@ tf/transform_datatypes.h
 -
 vector
 -
+stdio.h
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

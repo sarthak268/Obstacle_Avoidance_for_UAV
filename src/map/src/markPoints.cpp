@@ -25,8 +25,6 @@ visualization_msgs::Marker points;
 visualization_msgs::Marker obstacles;
 visualization_msgs::Marker waypoints;
 
-//int my_map[101][101] = {0};
-
 double toRad(double deg)
 {
 	return (deg*pi)/180;
@@ -35,6 +33,11 @@ double toRad(double deg)
 double toDeg(double rad)
 {
 	return (rad*180)/pi;
+}
+
+double ft2m(double ft)
+{
+	return (0.3084*ft);
 }
 
 geometry_msgs::Point toXY(double longitude, double latitude)
@@ -102,9 +105,6 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 {
 	double x = pt->x;
 	double y = pt->y;
-	// int roundx = int(x);
-	// int roundy = int(y);
-	// my_map[51+roundx][51+roundy] = 1;
 
 	points.header.frame_id = "/currentXY";
 	points.header.stamp = ros::Time::now();
