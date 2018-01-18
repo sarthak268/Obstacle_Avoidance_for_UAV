@@ -9,7 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/sarthak/Desktop/Aurora/aurora_ws/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/sarthak/Desktop/Aurora/aurora_ws/devel/lib:$LD_LIBRARY_PATH"
-export PATH="/opt/ros/kinetic/bin:/usr/lib/ccache:/home/sarthak/bin:/home/sarthak/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sarthak/ardupilot/Tools/autotest"
+export PATH="/opt/ros/kinetic/bin:/usr/lib/ccache:/home/sarthak/bin:/home/sarthak/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sarthak/sarthak/Desktop/ardupilot/Tools/autotest"
 export PKG_CONFIG_PATH="/home/sarthak/Desktop/Aurora/aurora_ws/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig:/usr/local/lib/pkgconfig"
 export PWD="/home/sarthak/Desktop/Aurora/aurora_ws/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/sarthak/Desktop/Aurora/aurora_ws/devel/share/common-lisp"

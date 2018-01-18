@@ -139,6 +139,8 @@ include_directories(
 
 add_executable(currentXY src/currentXY.cpp)
 add_executable(markPoints src/markPoints.cpp)
+add_executable(dummy src/dummyNode.cpp)
+
 
 
 ## Rename C++ executable without prefix
@@ -156,6 +158,9 @@ add_executable(markPoints src/markPoints.cpp)
    ${catkin_LIBRARIES}
  )
  target_link_libraries(markPoints
+   ${catkin_LIBRARIES}
+ )
+target_link_libraries(dummy
    ${catkin_LIBRARIES}
  )
 

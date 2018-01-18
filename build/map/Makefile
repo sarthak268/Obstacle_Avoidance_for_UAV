@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+map/CMakeFiles/dummy.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/dummy.dir/rule
+.PHONY : map/CMakeFiles/dummy.dir/rule
+
+# Convenience name for target.
+dummy: map/CMakeFiles/dummy.dir/rule
+
+.PHONY : dummy
+
+# fast build rule for target.
+dummy/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummy.dir/build.make map/CMakeFiles/dummy.dir/build
+.PHONY : dummy/fast
+
+# Convenience name for target.
 map/CMakeFiles/currentXY.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/currentXY.dir/rule
 .PHONY : map/CMakeFiles/currentXY.dir/rule
@@ -672,6 +687,33 @@ src/currentXY.cpp.s:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.s
 .PHONY : src/currentXY.cpp.s
 
+src/dummyNode.o: src/dummyNode.cpp.o
+
+.PHONY : src/dummyNode.o
+
+# target to build an object file
+src/dummyNode.cpp.o:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummy.dir/build.make map/CMakeFiles/dummy.dir/src/dummyNode.cpp.o
+.PHONY : src/dummyNode.cpp.o
+
+src/dummyNode.i: src/dummyNode.cpp.i
+
+.PHONY : src/dummyNode.i
+
+# target to preprocess a source file
+src/dummyNode.cpp.i:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummy.dir/build.make map/CMakeFiles/dummy.dir/src/dummyNode.cpp.i
+.PHONY : src/dummyNode.cpp.i
+
+src/dummyNode.s: src/dummyNode.cpp.s
+
+.PHONY : src/dummyNode.s
+
+# target to generate assembly for a file
+src/dummyNode.cpp.s:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummy.dir/build.make map/CMakeFiles/dummy.dir/src/dummyNode.cpp.s
+.PHONY : src/dummyNode.cpp.s
+
 src/markPoints.o: src/markPoints.cpp.o
 
 .PHONY : src/markPoints.o
@@ -710,6 +752,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... dummy"
 	@echo "... test"
 	@echo "... currentXY"
 	@echo "... visualization_msgs_generate_messages_eus"
@@ -747,6 +790,9 @@ help:
 	@echo "... src/currentXY.o"
 	@echo "... src/currentXY.i"
 	@echo "... src/currentXY.s"
+	@echo "... src/dummyNode.o"
+	@echo "... src/dummyNode.i"
+	@echo "... src/dummyNode.s"
 	@echo "... src/markPoints.o"
 	@echo "... src/markPoints.i"
 	@echo "... src/markPoints.s"

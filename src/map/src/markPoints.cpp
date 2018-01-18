@@ -9,6 +9,7 @@
 #include <std_msgs/Float64.h>
 #include <geometry_msgs/Point.h>
 #include <vector>
+#include <stdio.h>
 #include <math.h>
 #include <visualization_msgs/Marker.h>
 #include <iostream>
@@ -103,6 +104,7 @@ void readObstacleFile()
 
 void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 {
+	cout << "receiving current" << endl;
 	double x = pt->x;
 	double y = pt->y;
 
