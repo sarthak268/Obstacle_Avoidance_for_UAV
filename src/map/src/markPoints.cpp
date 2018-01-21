@@ -127,31 +127,35 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 
 void referenceLong_callback(const std_msgs::Float64::ConstPtr& longref)
 {
+	cout << "receiving reference Long" << endl;
 	referenceLong = longref->data;
 }
 
 void referenceLat_callback(const std_msgs::Float64::ConstPtr& latref)
 {
+	cout << "receiving reference Lat" << endl;
 	referenceLat = latref->data;
 }
 
 int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "markPoints");
-	NodeHandle nh;
-	Rate loop_rate(10);
+	ros::NodeHandle nh;
+	ros::Rate loop_rate(10);
 	
 	ros::Subscriber currentXY_sub = nh.subscribe("currentXY",10,markCurrent);
 	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
+	
 	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
 	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);
 	ros::Publisher waypoints_vis = nh.advertise<visualization_msgs::Marker>("waypoints_vis",10);
 
 	while (ros::ok())
-	{	
+	{
 		currentXY_vis.publish(points);
 		obstacle_vis.publish(obstacles);
-		spin();
+		waypoints_vis.publish(waypoints);
+		spinOnce();
 	}
 }

@@ -14,7 +14,7 @@ void create()
 {
 	msg.latitude = rand() % 100;
 	msg.longitude = rand() % 100;
-	cout << "sending msg" << endl;
+	//cout << "sending msg" << endl;
 }
 
 int main(int argc, char** argv)
@@ -28,6 +28,7 @@ int main(int argc, char** argv)
 	while (ros::ok())
 	{
 		create();
+		cout << msg << endl;
 		pub.publish(msg);
 	}
 }

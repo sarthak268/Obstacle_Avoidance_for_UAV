@@ -12,7 +12,7 @@ using namespace std;
 
 geometry_msgs::Point current;
 double pi = 3.14;
-bool first_time;
+bool first_time = true;
 double reference_long_rad;
 double reference_lat_rad;
 
@@ -38,7 +38,7 @@ geometry_msgs::Point toXY(double longitude, double latitude)
 
 void global_position_callback(const sensor_msgs::NavSatFix::ConstPtr& globalpos) // altitude //
 {
-	cout << "receiving mavros data" << endl;
+	//cout << "receiving mavros data" << endl;
 	double lat = globalpos->latitude;
 	double longi = globalpos->longitude;
 	if (first_time)
@@ -77,8 +77,9 @@ int main(int argc, char** argv)
 
 	while (ros::ok())
 	{
+		cout << current << endl;
 		currentXY_pub.publish(current);
-		spin();
+		spinOnce();
 	}
 
 }
