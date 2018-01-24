@@ -53,11 +53,12 @@ geometry_msgs::Point toXY(double longitude, double latitude)
 
 void readWaypointsFile()
 {
-	std::ifstream infile("waypoints.txt");
+	std::ifstream infile("/home/sarthak/Desktop/Aurora/waypoints.txt");
+	cout << "opened waypoints" << endl;
 	double x, y;
 	while (infile >> x >> y)
 	{
-		waypoints.header.frame_id = "/waypoints";
+		waypoints.header.frame_id = "/map";
 		waypoints.header.stamp = ros::Time::now();
 		waypoints.ns = "waypoints";
 		waypoints.action = visualization_msgs::Marker::ADD;
@@ -72,16 +73,18 @@ void readWaypointsFile()
 		wp.x = x;
 		wp.y = y;
 		waypoints.points.push_back(wp);
+		//cout << wp << endl;
 	}
 }
 
 void readObstacleFile()
 {	
-	std::ifstream infile("obstacle.txt");
+	std::ifstream infile("/home/sarthak/Desktop/Aurora/obstacles.txt");
+	cout << "opened obstacles" << endl;
 	double x, y, r;
 	while (infile >> x >> y >> r)
 	{
-		obstacles.header.frame_id = "/obstacles";
+		obstacles.header.frame_id = "/map";
 		obstacles.header.stamp = ros::Time::now();
 		obstacles.ns = "obstacle points";
 		obstacles.action = visualization_msgs::Marker::ADD;
@@ -99,16 +102,17 @@ void readObstacleFile()
 		obstacles.scale.z = 10;
 		obstacles.color.r = 1;
 		obstacles.color.a = 1;
-	}
+		//cout << x << " " << y << " "<< r << endl;
+	} 
 }
 
 void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 {
-	cout << "receiving current" << endl;
+	//cout << "receiving current" << endl;
 	double x = pt->x;
 	double y = pt->y;
 
-	points.header.frame_id = "/currentXY";
+	points.header.frame_id = "/map";
 	points.header.stamp = ros::Time::now();
 	points.ns = "currentXY points";
 	points.action = visualization_msgs::Marker::ADD;
@@ -123,6 +127,7 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 	p.x = x;
 	p.y = y;
 	points.points.push_back(p);
+	//cout << "added" << p << endl;
 }
 
 void referenceLong_callback(const std_msgs::Float64::ConstPtr& longref)
@@ -150,6 +155,9 @@ int main(int argc, char** argv)
 	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
 	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);
 	ros::Publisher waypoints_vis = nh.advertise<visualization_msgs::Marker>("waypoints_vis",10);
+
+	readObstacleFile();
+	readWaypointsFile();
 
 	while (ros::ok())
 	{
