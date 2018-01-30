@@ -26,6 +26,9 @@ visualization_msgs::Marker points;
 visualization_msgs::Marker obstacles;
 visualization_msgs::Marker waypoints;
 
+double current_x = 0;
+double current_y = 0;
+
 double toRad(double deg)
 {
 	return (deg*pi)/180;
@@ -39,6 +42,11 @@ double toDeg(double rad)
 double ft2m(double ft)
 {
 	return (0.3084*ft);
+}
+
+double distance(double x1, double y1, double x2, double y2)
+{
+	return (pow( pow((x1 - x2),2) + pow((y1 - y2),2) ,0.5));
 }
 
 geometry_msgs::Point toXY(double longitude, double latitude)
@@ -73,7 +81,7 @@ void readWaypointsFile()
 		wp.x = x;
 		wp.y = y;
 		waypoints.points.push_back(wp);
-		cout << "waypoints : " << " "<< wp << endl;
+		cout << "waypoints : \n" <<  wp << endl;
 	}
 }
 
@@ -82,28 +90,52 @@ void readObstacleFile()
 	std::ifstream infile("/home/sarthak/Desktop/Aurora/obstacles.txt");
 	cout << "opened obstacles" << endl;
 	double x, y, r;
+	double min_dis = 0;
+	double x_min = 0;
+	double y_min = 0;
+	double r_min = 0;
+	bool first = true;
 	while (infile >> x >> y >> r)
 	{
-		obstacles.header.frame_id = "/my_frame";
-		obstacles.header.stamp = ros::Time::now();
-		obstacles.ns = "rviz_plot";
-		obstacles.action = visualization_msgs::Marker::ADD;
-		obstacles.id = 2;
-		obstacles.type = visualization_msgs::Marker::CYLINDER;
-		obstacles.pose.position.x = x;
-		obstacles.pose.position.y = y;
-		obstacles.pose.position.z = 0;
-		obstacles.pose.orientation.x = 0;
-		obstacles.pose.orientation.y = 0;
-		obstacles.pose.orientation.z = 0;
-		obstacles.pose.orientation.w = 1;
-		obstacles.scale.x = 2*r;
-		obstacles.scale.y = 2*r;
-		obstacles.scale.z = 2;
-		obstacles.color.r = 1;
-		obstacles.color.a = 1;
-		cout << "obstacles : "<< " " << x << " " << y << " "<< r << endl;
-	} 
+		if (first == true)
+		{
+			min_dis = distance(current_x, current_y, x, y);
+			x_min = x;
+			y_min = y;
+			r_min = r;
+			first = false;
+		}	
+		else
+		{
+			double dist = distance(current_x, current_y, x, y);
+			if (dist < min_dis)
+			{
+				min_dis = dist;
+				x_min = x;
+				y_min = y;
+				r_min = r;
+			}
+		}
+	}
+	obstacles.header.frame_id = "/my_frame";
+	obstacles.header.stamp = ros::Time::now();
+	obstacles.ns = "rviz_plot";
+	obstacles.action = visualization_msgs::Marker::ADD;
+	obstacles.id = 2;
+	obstacles.type = visualization_msgs::Marker::CYLINDER;
+	obstacles.pose.position.x = x_min;
+	obstacles.pose.position.y = y_min;
+	obstacles.pose.position.z = 0;
+	obstacles.pose.orientation.x = 0;
+	obstacles.pose.orientation.y = 0;
+	obstacles.pose.orientation.z = 0;
+	obstacles.pose.orientation.w = 1;
+	obstacles.scale.x = 2*r_min;
+	obstacles.scale.y = 2*r_min;
+	obstacles.scale.z = 2;
+	obstacles.color.r = 1;
+	obstacles.color.a = 1;
+	cout << "obstacles : \n" << x_min << " " << y_min << " "<< r_min << endl; 
 }
 
 void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
@@ -111,6 +143,9 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 	//cout << "receiving current" << endl;
 	double x = pt->x;
 	double y = pt->y;
+
+	current_x = x;
+	current_y = y;
 
 	points.header.frame_id = "/map";
 	points.header.stamp = ros::Time::now();
@@ -156,13 +191,14 @@ int main(int argc, char** argv)
 	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);
 	ros::Publisher waypoints_vis = nh.advertise<visualization_msgs::Marker>("waypoints_vis",10);
 
-	readObstacleFile();
+	//readObstacleFile();
 	readWaypointsFile();
 	//cout << waypoints <<  endl;
 	//cout << obstacles << endl;
 
 	while (ros::ok())
 	{
+		readObstacleFile();
 		waypoints_vis.publish(waypoints);
 		obstacle_vis.publish(obstacles);
 
