@@ -58,9 +58,9 @@ void readWaypointsFile()
 	double x, y;
 	while (infile >> x >> y)
 	{
-		waypoints.header.frame_id = "/map";
+		waypoints.header.frame_id = "/my_frame";
 		waypoints.header.stamp = ros::Time::now();
-		waypoints.ns = "waypoints";
+		waypoints.ns = "rviz_plot";
 		waypoints.action = visualization_msgs::Marker::ADD;
 		waypoints.pose.orientation.w = 1;
 		waypoints.id = 1;
@@ -73,7 +73,7 @@ void readWaypointsFile()
 		wp.x = x;
 		wp.y = y;
 		waypoints.points.push_back(wp);
-		//cout << wp << endl;
+		cout << "waypoints : " << " "<< wp << endl;
 	}
 }
 
@@ -84,9 +84,9 @@ void readObstacleFile()
 	double x, y, r;
 	while (infile >> x >> y >> r)
 	{
-		obstacles.header.frame_id = "/map";
+		obstacles.header.frame_id = "/my_frame";
 		obstacles.header.stamp = ros::Time::now();
-		obstacles.ns = "obstacle points";
+		obstacles.ns = "rviz_plot";
 		obstacles.action = visualization_msgs::Marker::ADD;
 		obstacles.id = 2;
 		obstacles.type = visualization_msgs::Marker::CYLINDER;
@@ -99,10 +99,10 @@ void readObstacleFile()
 		obstacles.pose.orientation.w = 1;
 		obstacles.scale.x = 2*r;
 		obstacles.scale.y = 2*r;
-		obstacles.scale.z = 10;
+		obstacles.scale.z = 2;
 		obstacles.color.r = 1;
 		obstacles.color.a = 1;
-		//cout << x << " " << y << " "<< r << endl;
+		cout << "obstacles : "<< " " << x << " " << y << " "<< r << endl;
 	} 
 }
 
@@ -114,7 +114,7 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 
 	points.header.frame_id = "/map";
 	points.header.stamp = ros::Time::now();
-	points.ns = "currentXY points";
+	points.ns = "rviz_plot";
 	points.action = visualization_msgs::Marker::ADD;
 	points.pose.orientation.w = 0;
 	points.id = 0;
@@ -158,12 +158,15 @@ int main(int argc, char** argv)
 
 	readObstacleFile();
 	readWaypointsFile();
+	//cout << waypoints <<  endl;
+	//cout << obstacles << endl;
 
 	while (ros::ok())
 	{
-		currentXY_vis.publish(points);
-		obstacle_vis.publish(obstacles);
 		waypoints_vis.publish(waypoints);
+		obstacle_vis.publish(obstacles);
+
+		currentXY_vis.publish(points);
 		spinOnce();
 	}
 }
