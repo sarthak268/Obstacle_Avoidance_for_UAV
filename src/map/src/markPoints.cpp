@@ -140,14 +140,16 @@ void readObstacleFile()
 
 void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 {
-	//cout << "receiving current" << endl;
+	int number = 0;
+	int max_number = 10;
+	
 	double x = pt->x;
 	double y = pt->y;
 
 	current_x = x;
 	current_y = y;
 
-	points.header.frame_id = "/map";
+	points.header.frame_id = "/my_frame";
 	points.header.stamp = ros::Time::now();
 	points.ns = "rviz_plot";
 	points.action = visualization_msgs::Marker::ADD;
@@ -158,11 +160,24 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 	points.scale.y = 0.1;
 	points.color.b = 1;
 	points.color.a = 1;
-	geometry_msgs::Point p;
-	p.x = x;
-	p.y = y;
-	points.points.push_back(p);
-	//cout << "added" << p << endl;
+
+	if (number < max_number)
+	{
+		geometry_msgs::Point p;
+		p.x = x;
+		p.y = y;
+		points.points.push_back(p);
+		number ++ ;
+	}
+	else
+	{
+		geometry_msgs::Point p;
+		p.x = x;
+		p.y = y;
+		points.points.erase(points.points.begin());
+		points.points.push_back(p);
+	}
+
 }
 
 void referenceLong_callback(const std_msgs::Float64::ConstPtr& longref)
@@ -183,9 +198,9 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	ros::Rate loop_rate(10);
 	
-	ros::Subscriber currentXY_sub = nh.subscribe("currentXY",10,markCurrent);
-	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
-	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
+	ros::Subscriber currentXY_sub = nh.subscribe("dummyXY",10,markCurrent);
+	ros::Subscriber referenceLong_Sub = nh.subscribe("dummy_long",10,referenceLong_callback);
+	ros::Subscriber referenceLat_Sub = nh.subscribe("dummy_lat",10,referenceLat_callback);
 	
 	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
 	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);

@@ -12,8 +12,8 @@ sensor_msgs::NavSatFix msg;
 
 void create()
 {
-	msg.latitude = rand() % 100;
-	msg.longitude = rand() % 100;
+	msg.latitude = rand() % 8;
+	msg.longitude = rand() % 8;
 	ros::Duration(2).sleep();
 	//cout << "sending msg" << endl;
 }

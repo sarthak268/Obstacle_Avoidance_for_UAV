@@ -140,6 +140,7 @@ include_directories(
 add_executable(currentXY src/currentXY.cpp)
 add_executable(markPoints src/markPoints.cpp)
 add_executable(dummy src/dummyNode.cpp)
+add_executable(dummyXY src/dummyCurrentXY.cpp)
 
 
 
@@ -163,6 +164,10 @@ add_executable(dummy src/dummyNode.cpp)
 target_link_libraries(dummy
    ${catkin_LIBRARIES}
  )
+target_link_libraries(dummyXY
+   ${catkin_LIBRARIES}
+ )
+
 
 #############
 ## Install ##

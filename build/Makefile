@@ -257,6 +257,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named dummyXY
+
+# Build rule for target.
+dummyXY: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dummyXY
+.PHONY : dummyXY
+
+# fast build rule for target.
+dummyXY/fast:
+	$(MAKE) -f map/CMakeFiles/dummyXY.dir/build.make map/CMakeFiles/dummyXY.dir/build
+.PHONY : dummyXY/fast
+
+#=============================================================================
 # Target rules for targets named dummy
 
 # Build rule for target.
@@ -705,6 +718,7 @@ help:
 	@echo "... test"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... dummyXY"
 	@echo "... dummy"
 	@echo "... currentXY"
 	@echo "... visualization_msgs_generate_messages_eus"

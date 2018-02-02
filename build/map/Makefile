@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+map/CMakeFiles/dummyXY.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/dummyXY.dir/rule
+.PHONY : map/CMakeFiles/dummyXY.dir/rule
+
+# Convenience name for target.
+dummyXY: map/CMakeFiles/dummyXY.dir/rule
+
+.PHONY : dummyXY
+
+# fast build rule for target.
+dummyXY/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummyXY.dir/build.make map/CMakeFiles/dummyXY.dir/build
+.PHONY : dummyXY/fast
+
+# Convenience name for target.
 map/CMakeFiles/dummy.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/dummy.dir/rule
 .PHONY : map/CMakeFiles/dummy.dir/rule
@@ -687,6 +702,33 @@ src/currentXY.cpp.s:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/currentXY.dir/build.make map/CMakeFiles/currentXY.dir/src/currentXY.cpp.s
 .PHONY : src/currentXY.cpp.s
 
+src/dummyCurrentXY.o: src/dummyCurrentXY.cpp.o
+
+.PHONY : src/dummyCurrentXY.o
+
+# target to build an object file
+src/dummyCurrentXY.cpp.o:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummyXY.dir/build.make map/CMakeFiles/dummyXY.dir/src/dummyCurrentXY.cpp.o
+.PHONY : src/dummyCurrentXY.cpp.o
+
+src/dummyCurrentXY.i: src/dummyCurrentXY.cpp.i
+
+.PHONY : src/dummyCurrentXY.i
+
+# target to preprocess a source file
+src/dummyCurrentXY.cpp.i:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummyXY.dir/build.make map/CMakeFiles/dummyXY.dir/src/dummyCurrentXY.cpp.i
+.PHONY : src/dummyCurrentXY.cpp.i
+
+src/dummyCurrentXY.s: src/dummyCurrentXY.cpp.s
+
+.PHONY : src/dummyCurrentXY.s
+
+# target to generate assembly for a file
+src/dummyCurrentXY.cpp.s:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/dummyXY.dir/build.make map/CMakeFiles/dummyXY.dir/src/dummyCurrentXY.cpp.s
+.PHONY : src/dummyCurrentXY.cpp.s
+
 src/dummyNode.o: src/dummyNode.cpp.o
 
 .PHONY : src/dummyNode.o
@@ -752,6 +794,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... dummyXY"
 	@echo "... dummy"
 	@echo "... test"
 	@echo "... currentXY"
@@ -790,6 +833,9 @@ help:
 	@echo "... src/currentXY.o"
 	@echo "... src/currentXY.i"
 	@echo "... src/currentXY.s"
+	@echo "... src/dummyCurrentXY.o"
+	@echo "... src/dummyCurrentXY.i"
+	@echo "... src/dummyCurrentXY.s"
 	@echo "... src/dummyNode.o"
 	@echo "... src/dummyNode.i"
 	@echo "... src/dummyNode.s"
