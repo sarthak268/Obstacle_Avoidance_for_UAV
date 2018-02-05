@@ -2,7 +2,7 @@
 0 - unknown(white)
 1 - current(blue)
 2 - waypoints(green)
-3 - obstacles(red)s
+3 - obstacles(red)
 */
 
 #include <ros/ros.h>
@@ -198,9 +198,9 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	ros::Rate loop_rate(10);
 	
-	ros::Subscriber currentXY_sub = nh.subscribe("dummyXY",10,markCurrent);
-	ros::Subscriber referenceLong_Sub = nh.subscribe("dummy_long",10,referenceLong_callback);
-	ros::Subscriber referenceLat_Sub = nh.subscribe("dummy_lat",10,referenceLat_callback);
+	ros::Subscriber currentXY_sub = nh.subscribe("currentXY",10,markCurrent);
+	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
+	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
 	
 	ros::Publisher currentXY_vis = nh.advertise<visualization_msgs::Marker>("currentXY_vis",10);
 	ros::Publisher obstacle_vis = nh.advertise<visualization_msgs::Marker>("obstacle_vis",10);

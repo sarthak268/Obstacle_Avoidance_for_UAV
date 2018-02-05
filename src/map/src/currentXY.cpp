@@ -61,8 +61,10 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	Rate loop_rate(10);
 	
-	//ros::Subscriber global_position_sub = nh.subscribe("/mavros/global_position/global",10,global_position_callback); 
-	ros::Subscriber global_position_sub = nh.subscribe("navsatfix",10,global_position_callback); 
+	ros::Subscriber global_position_sub = nh.subscribe("/mavros/global_position/global",10,global_position_callback); 
+
+	//ros::Subscriber global_position_sub = nh.subscribe("navsatfix",10,global_position_callback); 
+	
 	ros::Publisher currentXY_pub = nh.advertise<geometry_msgs::Point>("currentXY",10);
 	ros::Publisher referenceLong_pub = nh.advertise<std_msgs::Float64>("referenceLong",10);
 	ros::Publisher referenceLat_pub = nh.advertise<std_msgs::Float64>("referenceLat",10);
@@ -78,6 +80,7 @@ int main(int argc, char** argv)
 	while (ros::ok())
 	{
 		cout << current << endl;
+		ros::Duration(2).sleep();
 		currentXY_pub.publish(current);
 		spinOnce();
 	}
