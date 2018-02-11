@@ -270,6 +270,19 @@ dummyXY/fast:
 .PHONY : dummyXY/fast
 
 #=============================================================================
+# Target rules for targets named waypoints
+
+# Build rule for target.
+waypoints: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 waypoints
+.PHONY : waypoints
+
+# fast build rule for target.
+waypoints/fast:
+	$(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/build
+.PHONY : waypoints/fast
+
+#=============================================================================
 # Target rules for targets named dummy
 
 # Build rule for target.
@@ -719,6 +732,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... dummyXY"
+	@echo "... waypoints"
 	@echo "... dummy"
 	@echo "... currentXY"
 	@echo "... visualization_msgs_generate_messages_eus"

@@ -171,6 +171,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "map/CMakeFiles/dummyXY.dir/DependInfo.cmake"
+  "map/CMakeFiles/waypoints.dir/DependInfo.cmake"
   "map/CMakeFiles/dummy.dir/DependInfo.cmake"
   "map/CMakeFiles/currentXY.dir/DependInfo.cmake"
   "map/CMakeFiles/visualization_msgs_generate_messages_eus.dir/DependInfo.cmake"

@@ -25,6 +25,7 @@
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/install/local.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/install/strip.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/dummyXY.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/waypoints.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/dummy.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/test.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/currentXY.dir

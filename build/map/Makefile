@@ -181,6 +181,21 @@ dummyXY/fast:
 .PHONY : dummyXY/fast
 
 # Convenience name for target.
+map/CMakeFiles/waypoints.dir/rule:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/waypoints.dir/rule
+.PHONY : map/CMakeFiles/waypoints.dir/rule
+
+# Convenience name for target.
+waypoints: map/CMakeFiles/waypoints.dir/rule
+
+.PHONY : waypoints
+
+# fast build rule for target.
+waypoints/fast:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/build
+.PHONY : waypoints/fast
+
+# Convenience name for target.
 map/CMakeFiles/dummy.dir/rule:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 map/CMakeFiles/dummy.dir/rule
 .PHONY : map/CMakeFiles/dummy.dir/rule
@@ -783,6 +798,33 @@ src/markPoints.cpp.s:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/src/markPoints.cpp.s
 .PHONY : src/markPoints.cpp.s
 
+src/waypoints.o: src/waypoints.cpp.o
+
+.PHONY : src/waypoints.o
+
+# target to build an object file
+src/waypoints.cpp.o:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/src/waypoints.cpp.o
+.PHONY : src/waypoints.cpp.o
+
+src/waypoints.i: src/waypoints.cpp.i
+
+.PHONY : src/waypoints.i
+
+# target to preprocess a source file
+src/waypoints.cpp.i:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/src/waypoints.cpp.i
+.PHONY : src/waypoints.cpp.i
+
+src/waypoints.s: src/waypoints.cpp.s
+
+.PHONY : src/waypoints.s
+
+# target to generate assembly for a file
+src/waypoints.cpp.s:
+	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/src/waypoints.cpp.s
+.PHONY : src/waypoints.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -795,6 +837,7 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... dummyXY"
+	@echo "... waypoints"
 	@echo "... dummy"
 	@echo "... test"
 	@echo "... currentXY"
@@ -842,6 +885,9 @@ help:
 	@echo "... src/markPoints.o"
 	@echo "... src/markPoints.i"
 	@echo "... src/markPoints.s"
+	@echo "... src/waypoints.o"
+	@echo "... src/waypoints.i"
+	@echo "... src/waypoints.s"
 .PHONY : help
 
 
