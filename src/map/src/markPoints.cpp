@@ -24,7 +24,6 @@ double referenceLong;
 double pi = 3.14;
 visualization_msgs::Marker points;
 visualization_msgs::Marker obstacles;
-visualization_msgs::Marker waypoints;
 
 double current_x = 0;
 double current_y = 0;
@@ -37,11 +36,6 @@ double toRad(double deg)
 double toDeg(double rad)
 {
 	return (rad*180)/pi;
-}
-
-double ft2m(double ft)
-{
-	return (0.3084*ft);
 }
 
 double distance(double x1, double y1, double x2, double y2)
