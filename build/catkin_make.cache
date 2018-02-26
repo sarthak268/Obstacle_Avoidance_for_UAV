@@ -1,2 +1,2 @@
-map
+map:planner
 -DCATKIN_DEVEL_PREFIX=/home/sarthak/Desktop/Aurora/aurora_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sarthak/Desktop/Aurora/aurora_ws/install -G Unix Makefiles

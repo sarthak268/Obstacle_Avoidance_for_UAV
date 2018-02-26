@@ -61,3 +61,11 @@
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/markPoints.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir
 /home/sarthak/Desktop/Aurora/aurora_ws/build/map/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/rebuild_cache.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/edit_cache.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/list_install_components.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/install.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/planning.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/install/strip.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/install/local.dir
+/home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/test.dir

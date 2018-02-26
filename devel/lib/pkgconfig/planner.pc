@@ -1,0 +1,8 @@
+prefix=/home/sarthak/Desktop/Aurora/aurora_ws/devel
+
+Name: planner
+Description: Description of planner
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sarthak/Desktop/Aurora/aurora_ws/devel/lib 
+Requires: 
