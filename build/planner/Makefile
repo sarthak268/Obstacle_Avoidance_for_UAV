@@ -56,28 +56,6 @@ CMAKE_BINARY_DIR = /home/sarthak/Desktop/Aurora/aurora_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -99,6 +77,17 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -133,6 +122,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles /home/sarthak/Desktop/Aurora/aurora_ws/build/planner/CMakeFiles/progress.marks
@@ -165,65 +165,19 @@ depend:
 	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-planner/CMakeFiles/planning.dir/rule:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f CMakeFiles/Makefile2 planner/CMakeFiles/planning.dir/rule
-.PHONY : planner/CMakeFiles/planning.dir/rule
-
-# Convenience name for target.
-planning: planner/CMakeFiles/planning.dir/rule
-
-.PHONY : planning
-
-# fast build rule for target.
-planning/fast:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/build
-.PHONY : planning/fast
-
-src/planning.o: src/planning.cpp.o
-
-.PHONY : src/planning.o
-
-# target to build an object file
-src/planning.cpp.o:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/src/planning.cpp.o
-.PHONY : src/planning.cpp.o
-
-src/planning.i: src/planning.cpp.i
-
-.PHONY : src/planning.i
-
-# target to preprocess a source file
-src/planning.cpp.i:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/src/planning.cpp.i
-.PHONY : src/planning.cpp.i
-
-src/planning.s: src/planning.cpp.s
-
-.PHONY : src/planning.s
-
-# target to generate assembly for a file
-src/planning.cpp.s:
-	cd /home/sarthak/Desktop/Aurora/aurora_ws/build && $(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/src/planning.cpp.s
-.PHONY : src/planning.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... planning"
+	@echo "... rebuild_cache"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... src/planning.o"
-	@echo "... src/planning.i"
-	@echo "... src/planning.s"
+	@echo "... edit_cache"
 .PHONY : help
 
 
