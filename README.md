@@ -3,14 +3,14 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 
 #Commands : 
 ## Testing :
-..* roscore
-..* /(path to sim_vehicle)/sim_vehicle.py --console --map --aircraft test
-..* roslaunch mavros apm2.launch fcu_url:=udp://localhost:14550@ 
-..* rosrun map currentXY  
-..* rosrun map markPoints
-..* rviz 
+1. roscore
+2. /(path to sim_vehicle)/sim_vehicle.py --console --map --aircraft test
+3. roslaunch mavros apm2.launch fcu_url:=udp://localhost:14550@ 
+4. rosrun map currentXY  
+5. rosrun map markPoints
+6. rviz 
 (write the frame id i.e. /my_frame in the Fixed Frame)
-..* rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map my_frame 10
-..* rosrun map waypoints
+7. rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map my_frame 10
+8. rosrun map waypoints
 
 
