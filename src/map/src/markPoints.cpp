@@ -43,6 +43,11 @@ double distance(double x1, double y1, double x2, double y2)
 	return (pow( pow((x1 - x2),2) + pow((y1 - y2),2) ,0.5));
 }
 
+double feetToMt(double x)
+{
+	return (0.3048*x);
+}
+
 geometry_msgs::Point toXY(double longitude, double latitude)
 {
 	double x = (longitude - referenceLong) * (40075000.0 / (2.0 * pi)) * cos(referenceLat);
@@ -57,14 +62,18 @@ void readObstacleFile()
 {	
 	std::ifstream infile("/home/sarthak/Desktop/Aurora/obstacles.txt");
 	cout << "opened obstacles" << endl;
-	double x, y, r;
+	double lati, longi, r_in_feet;
 	double min_dis = 0;
 	double x_min = 0;
 	double y_min = 0;
 	double r_min = 0;
 	bool first = true;
-	while (infile >> x >> y >> r)
+	while (infile >> longi >> lati >> r_in_feet)
 	{
+		double r = feetToMt(r_in_feet);
+		geometry_msgs::Point pt = toXY(longi,lati);
+		double x = pt.x;
+		double y = pt.y;
 		if (first == true)
 		{
 			min_dis = distance(current_x, current_y, x, y);
