@@ -1,4 +1,4 @@
-# Obstacle Avoidance_for_UAV
+# Obstacle Avoidance for UAV
 This is a ROS workspace that creates a trajectory for a UAV to follow passing through a set of given waypoints and avoiding a set of given cylindrical obstacles, using a path planning algorithm. The testing is done through a node that plots the waypoints, obstacles and the current pose of UAV on RVIZ for examining the accuracy of the algorithm. 
 
 # Commands : 

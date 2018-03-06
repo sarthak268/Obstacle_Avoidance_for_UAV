@@ -1,0 +1,35 @@
+1) roscore
+
+2) /home/sarthak/Desktop/ardupilot/Tools/autotest/sim_vehicle.py --console --map --aircraft test
+
+3) roslaunch mavros apm2.launch fcu_url:=udp://localhost:14550@
+
+4) rosrun map currentXY 
+
+5) rosrun map markPoints
+
+6) rviz 
+(write the frame id i.e. /my_frame in the Fixed Frame)
+
+7) rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map my_frame 10
+
+8) rosrun map waypoints 
+
+
+
+EDITS:
+
+1) NECESSARY : 
+	increase map size
+	path planning code --- mandeep bhaiya
+
+2) OPTIONAL : 
+	introduce height
+
+
+SITL : 
+
+cd ardupilot/ArduPlane
+wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
+arm throttle
+mode auto

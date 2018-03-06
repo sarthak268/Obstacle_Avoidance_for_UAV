@@ -38,7 +38,6 @@ geometry_msgs::Point toXY(double longitude, double latitude)
 
 void global_position_callback(const sensor_msgs::NavSatFix::ConstPtr& globalpos) // altitude //
 {
-	//cout << "receiving mavros data" << endl;
 	double lat = globalpos->latitude;
 	double longi = globalpos->longitude;
 	if (first_time)
@@ -64,6 +63,7 @@ int main(int argc, char** argv)
 	ros::Subscriber global_position_sub = nh.subscribe("/mavros/global_position/global",10,global_position_callback); 
 
 	//ros::Subscriber global_position_sub = nh.subscribe("navsatfix",10,global_position_callback); 
+	// for dummy node
 	
 	ros::Publisher currentXY_pub = nh.advertise<geometry_msgs::Point>("currentXY",10);
 	ros::Publisher referenceLong_pub = nh.advertise<std_msgs::Float64>("referenceLong",10);
