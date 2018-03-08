@@ -42,7 +42,7 @@ void readWaypointsFile()
 		waypoints.type = visualization_msgs::Marker::POINTS;
 		waypoints.scale.x = 0.1;
 		waypoints.scale.y = 0.1;
-		waypoints.color.g = 1;
+		waypoints.color.r = 1;
 		waypoints.color.a = 1;
 		geometry_msgs::Point wp;
 		geometry_msgs::Point pt = toXY(longi, lati);

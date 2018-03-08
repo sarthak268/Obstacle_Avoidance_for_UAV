@@ -142,16 +142,16 @@ void markCurrent(const geometry_msgs::Point::ConstPtr& pt)
 	if (number < max_number)
 	{
 		geometry_msgs::Point p;
-		p.x = x;
-		p.y = y;
+		p.x = x / 100;
+		p.y = y / 100;
 		points.points.push_back(p);
 		number ++ ;
 	}
 	else
 	{
 		geometry_msgs::Point p;
-		p.x = x;
-		p.y = y;
+		p.x = x / 1000000;
+		p.y = y / 1000000;
 		points.points.erase(points.points.begin());
 		points.points.push_back(p);
 	}
