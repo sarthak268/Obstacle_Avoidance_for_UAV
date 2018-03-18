@@ -245,7 +245,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -277,7 +277,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -402,7 +402,7 @@ clean: map/CMakeFiles/dummyXY.dir/clean
 map/CMakeFiles/waypoints.dir/all:
 	$(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/depend
 	$(MAKE) -f map/CMakeFiles/waypoints.dir/build.make map/CMakeFiles/waypoints.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=13,14 "Built target waypoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=17,18 "Built target waypoints"
 .PHONY : map/CMakeFiles/waypoints.dir/all
 
 # Include target in all.
@@ -1409,7 +1409,7 @@ clean: map/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 map/CMakeFiles/markPoints.dir/all:
 	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/depend
 	$(MAKE) -f map/CMakeFiles/markPoints.dir/build.make map/CMakeFiles/markPoints.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=11,12 "Built target markPoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=13,14 "Built target markPoints"
 .PHONY : map/CMakeFiles/markPoints.dir/all
 
 # Include target in all.
@@ -1507,12 +1507,14 @@ clean: map/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 # Directory level rules for directory planner
 
 # Convenience name for "all" pass in the directory.
-planner/all:
+planner/all: planner/CMakeFiles/planning.dir/all
+planner/all: planner/CMakeFiles/getPath.dir/all
 
 .PHONY : planner/all
 
 # Convenience name for "clean" pass in the directory.
-planner/clean:
+planner/clean: planner/CMakeFiles/planning.dir/clean
+planner/clean: planner/CMakeFiles/getPath.dir/clean
 
 .PHONY : planner/clean
 
@@ -1520,6 +1522,80 @@ planner/clean:
 planner/preinstall:
 
 .PHONY : planner/preinstall
+
+#=============================================================================
+# Target rules for target planner/CMakeFiles/planning.dir
+
+# All Build rule for target.
+planner/CMakeFiles/planning.dir/all:
+	$(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/depend
+	$(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=15,16 "Built target planning"
+.PHONY : planner/CMakeFiles/planning.dir/all
+
+# Include target in all.
+all: planner/CMakeFiles/planning.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+planner/CMakeFiles/planning.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 planner/CMakeFiles/planning.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 0
+.PHONY : planner/CMakeFiles/planning.dir/rule
+
+# Convenience name for target.
+planning: planner/CMakeFiles/planning.dir/rule
+
+.PHONY : planning
+
+# clean rule for target.
+planner/CMakeFiles/planning.dir/clean:
+	$(MAKE) -f planner/CMakeFiles/planning.dir/build.make planner/CMakeFiles/planning.dir/clean
+.PHONY : planner/CMakeFiles/planning.dir/clean
+
+# clean rule for target.
+clean: planner/CMakeFiles/planning.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target planner/CMakeFiles/getPath.dir
+
+# All Build rule for target.
+planner/CMakeFiles/getPath.dir/all:
+	$(MAKE) -f planner/CMakeFiles/getPath.dir/build.make planner/CMakeFiles/getPath.dir/depend
+	$(MAKE) -f planner/CMakeFiles/getPath.dir/build.make planner/CMakeFiles/getPath.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles --progress-num=7,8 "Built target getPath"
+.PHONY : planner/CMakeFiles/getPath.dir/all
+
+# Include target in all.
+all: planner/CMakeFiles/getPath.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+planner/CMakeFiles/getPath.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 planner/CMakeFiles/getPath.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarthak/Desktop/Aurora/aurora_ws/build/CMakeFiles 0
+.PHONY : planner/CMakeFiles/getPath.dir/rule
+
+# Convenience name for target.
+getPath: planner/CMakeFiles/getPath.dir/rule
+
+.PHONY : getPath
+
+# clean rule for target.
+planner/CMakeFiles/getPath.dir/clean:
+	$(MAKE) -f planner/CMakeFiles/getPath.dir/build.make planner/CMakeFiles/getPath.dir/clean
+.PHONY : planner/CMakeFiles/getPath.dir/clean
+
+# clean rule for target.
+clean: planner/CMakeFiles/getPath.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

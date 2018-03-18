@@ -148,11 +148,18 @@ include_directories(
 ## Specify libraries to link a library or executable target against
  
 
-#add_executable(planning src/planning.cpp)
+add_executable(planning src/planning.cpp)
 
- #target_link_libraries(planning
-  # ${catkin_LIBRARIES}
- #)
+ target_link_libraries(planning
+   ${catkin_LIBRARIES}
+ )
+
+add_executable(getPath src/getPath.cpp)
+
+ target_link_libraries(getPath
+   ${catkin_LIBRARIES}
+ )
+
 
 #############
 ## Install ##

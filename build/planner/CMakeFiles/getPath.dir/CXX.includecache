@@ -6,22 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/sarthak/Desktop/Aurora/aurora_ws/src/planner/src/planning.cpp
-math.h
--
+/home/sarthak/Desktop/Aurora/aurora_ws/src/planner/src/getPath.cpp
 ros/ros.h
 -
+fstream
+-
 iostream
+-
+string
 -
 std_msgs/Float64.h
 -
 geometry_msgs/Point.h
--
-fstream
--
-string
--
-vector
 -
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
