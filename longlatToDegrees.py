@@ -9,3 +9,4 @@ mindeg = input("Enter Minutes of Arc : ")
 secdeg = input("Enter Seconds of Arc : ")
 
 convert(deg,mindeg,secdeg)
+
