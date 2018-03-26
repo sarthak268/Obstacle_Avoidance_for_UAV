@@ -23,6 +23,8 @@ string
 -
 vector
 -
+std_msgs/Int8.h
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string
@@ -687,6 +689,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
 
 /opt/ros/kinetic/include/std_msgs/Float64.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/std_msgs/Int8.h
 string
 -
 vector

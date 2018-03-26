@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <std_msgs/Int8.h>
 
 using namespace ros;
 using namespace std;
@@ -85,6 +86,11 @@ void waypoint_callback(const geometry_msgs::Point::ConstPtr& pt)
    next_wp_y = pt->y;
 }
 
+// vector<double>(2) getpath(double start_x, double start_y, double end_x, double end_y)
+// {
+
+// } 
+
 int main(int argc, char ** argv)
 {
    ros::init(argc, argv, "planner");
@@ -96,16 +102,23 @@ int main(int argc, char ** argv)
    ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
    ros::Subscriber waypoint_sub = nh.subscribe("next_waypoint",10,waypoint_callback);
    
-   ros::Publisher condition_publisher = nh.advertise<bool>("reached",10);
+   ros::Publisher condition_publisher = nh.advertise<std_msgs::Int8>("reached",10);
 
    readObstacleFile();
 
-   index = 0;
    while (ros::ok())
    {
-      while (distance(current_x, current_y, next_wp_x, next_wp_y) < threshold_distance)
+      std_msgs::Int8 msg;
+      if (distance(current_x, current_y, next_wp_x, next_wp_y) < threshold_distance)
       {
-           
+         msg.data = 0;
+         condition_publisher.publish(msg);
+      }
+      else
+      {
+         msg.data = 1;
+         condition_publisher.publish(msg);
+         //vector<double> a = getpath(current_x, current_y, next_wp_x, next_wp_y);
       }
    }
 

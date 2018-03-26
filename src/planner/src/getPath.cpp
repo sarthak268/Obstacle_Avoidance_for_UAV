@@ -4,6 +4,7 @@
 #include <string>
 #include <std_msgs/Float64.h>
 #include <geometry_msgs/Point.h>
+#include <std_msgs/Int8.h>
 
 using namespace ros;
 using namespace std;
@@ -55,6 +56,18 @@ void readWaypointsFile()
 	}
 }
 
+void main_callback(const std_msgs::Int8::ConstPtr& bol)
+{
+	if (bol->data == 0)
+	{
+
+	}
+	else if(bol->data == 1)
+	{
+		
+	}
+}
+
 int main(int argc, char** argv)
 {
 	init(argc, argv, "getPath");
@@ -63,9 +76,11 @@ int main(int argc, char** argv)
 
 	ros::Subscriber referenceLong_Sub = nh.subscribe("referenceLong",10,referenceLong_callback);
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
+	ros::Subscriber reached_sub = nh.subscribe("reached",10,main_callback);
 
 	readWaypointsFile();
 
+	int index = 0;
 	while(ros::ok())
 	{
 

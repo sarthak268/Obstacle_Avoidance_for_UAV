@@ -61,5 +61,6 @@ planner/CMakeFiles/getPath.dir/src/getPath.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/Float64.h
+ /opt/ros/kinetic/include/std_msgs/Int8.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
