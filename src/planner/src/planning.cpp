@@ -96,13 +96,16 @@ int main(int argc, char ** argv)
    ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
    ros::Subscriber waypoint_sub = nh.subscribe("next_waypoint",10,waypoint_callback);
    
+   ros::Publisher condition_publisher = nh.advertise<bool>("reached",10);
+
    readObstacleFile();
 
+   index = 0;
    while (ros::ok())
    {
       while (distance(current_x, current_y, next_wp_x, next_wp_y) < threshold_distance)
       {
-         
+           
       }
    }
 

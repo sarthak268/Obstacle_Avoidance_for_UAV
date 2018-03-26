@@ -36,6 +36,11 @@ void referenceLat_callback(const std_msgs::Float64::ConstPtr& latref)
    referenceLat = latref->data;
 }
 
+double distance(double x1, double y1, double x2, double y2)
+{
+   return sqrt( pow((x1 - x2), 2) + pow((y1 - y2), 2) );
+}
+
 void readWaypointsFile()
 {
 	std::ifstream infile("/home/sarthak/Desktop/Aurora/waypoints.txt");
@@ -60,4 +65,9 @@ int main(int argc, char** argv)
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
 
 	readWaypointsFile();
+
+	while(ros::ok())
+	{
+
+	}
 }
