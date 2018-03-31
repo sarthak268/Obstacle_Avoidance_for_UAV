@@ -17,6 +17,8 @@ vector<bool> waypoint_passed;
 
 static double referenceLat, referenceLong;
 
+static int index1 = 0;
+
 geometry_msgs::Point toXY(double longitude, double latitude)
 {
    double x = (longitude - referenceLong) * (40075000.0 / (2.0 * pi)) * cos(referenceLat);
@@ -60,11 +62,7 @@ void main_callback(const std_msgs::Int8::ConstPtr& bol)
 {
 	if (bol->data == 0)
 	{
-
-	}
-	else if(bol->data == 1)
-	{
-		
+		index1 = index1 + 1;
 	}
 }
 
@@ -78,11 +76,18 @@ int main(int argc, char** argv)
 	ros::Subscriber referenceLat_Sub = nh.subscribe("referenceLat",10,referenceLat_callback);
 	ros::Subscriber reached_sub = nh.subscribe("reached",10,main_callback);
 
+	ros::Publisher current_waypoint_pub = nh.advertise<geometry_msgs::Point>("next_waypoint",10);
+
 	readWaypointsFile();
 
-	int index = 0;
 	while(ros::ok())
 	{
-
-	}
+		int index = index1;
+		double wpx = waypoint_x[index];
+		double wpy = waypoint_y[index];
+		geometry_msgs::Point wp_msg;
+		wp_msg.x = wpx;
+		wp_msg.y = wpy;
+		current_waypoint_pub.publish(wp_msg);
+	}	
 }

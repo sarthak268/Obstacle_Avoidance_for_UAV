@@ -27,6 +27,9 @@ double next_wp_y;
 
 double threshold_distance = 5;
 
+vector<double> wpx;
+vector<double> wpy;
+
 double feetToMt(double x)
 {
    return (0.3048*x);
@@ -46,6 +49,16 @@ geometry_msgs::Point toXY(double longitude, double latitude)
    p.x = x;
    p.y = y;
    return p;
+}
+
+geometry_msgs::Point XY2LongLat(double xn, double yn)
+{  
+   double longit = (xn / cos(referenceLat)*(40075000.0 / (2.0 * pi))) + referenceLong; 
+   double latit = (yn / (40007000.0 / (2.0 * pi))) + referenceLat; 
+   geometry_msgs::Point p1;
+   p1.x = longit;
+   p1.y = latit;
+   return p1;
 }
 
 double distance(double x1, double y1, double x2, double y2)
@@ -86,10 +99,13 @@ void waypoint_callback(const geometry_msgs::Point::ConstPtr& pt)
    next_wp_y = pt->y;
 }
 
-// vector<double>(2) getpath(double start_x, double start_y, double end_x, double end_y)
-// {
+void getpath(double start_x, double start_y, double end_x, double end_y)
+{
+   wpx.clear();
+   wpy.clear();
 
-// } 
+   // find a path between both points convert points on that path to long lat and write (overwrite) in a txt file
+} 
 
 int main(int argc, char ** argv)
 {
@@ -118,7 +134,7 @@ int main(int argc, char ** argv)
       {
          msg.data = 1;
          condition_publisher.publish(msg);
-         //vector<double> a = getpath(current_x, current_y, next_wp_x, next_wp_y);
+         getpath(current_x, current_y, next_wp_x, next_wp_y);
       }
    }
 
