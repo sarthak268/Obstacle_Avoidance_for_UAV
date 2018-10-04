@@ -6,7 +6,7 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 2. ardupilot
 3. mavros
 4. rviz
-5. mission planner (preferred) or apm planner
+5. Mission Planner (preferred) or apm Planner
 
 # Commands : 
 
