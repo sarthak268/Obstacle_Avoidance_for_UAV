@@ -10,7 +10,7 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 
 # Commands : 
 
-## Testing existing algorithms :
+## Testing existing Algorithms :
 1. roscore
 2. /(path to sim_vehicle)/sim_vehicle.py --console --map --aircraft test
 3. roslaunch mavros apm2.launch fcu_url:=udp://localhost:14550@ 
