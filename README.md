@@ -11,6 +11,7 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 # Commands : 
 
 ## Testing existing Algorithms :
+```
 1. roscore
 2. /(path to sim_vehicle)/sim_vehicle.py --console --map --aircraft test
 3. roslaunch mavros apm2.launch fcu_url:=udp://localhost:14550@ 
@@ -20,5 +21,6 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 (write the frame id i.e. /my_frame in the Fixed Frame)
 7. rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map my_frame 10
 8. rosrun map waypoints
+```
 
 
