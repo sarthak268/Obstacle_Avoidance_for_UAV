@@ -24,3 +24,4 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 ```
 
 
+For any queries, please contact me via mail on sarthak16189@iiitd.ac.in
