@@ -23,5 +23,16 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
 8. rosrun map waypoints
 ```
 
+# Citing
+
+```
+@misc{bhagat-obstacle-simulator-ros,
+  author = {Sarthak Bhagat},
+  title = {sarthak268/Obstacle_Avoidance_for_UAV},
+  url = {https://github.com/sarthak268/Obstacle_Avoidance_for_UAV},
+  year = {2018}
+}```
 
 For any queries, please contact me via mail on sarthak16189@iiitd.ac.in
+
+
