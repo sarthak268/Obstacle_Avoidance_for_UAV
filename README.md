@@ -33,6 +33,16 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
   year = {2018}
 }
 ```
+You may also want to look at the following paper.
+```
+@article{Bhagat2020UAVTT,
+  title={UAV Target Tracking in Urban Environments Using Deep Reinforcement Learning},
+  author={Sarthak Bhagat and P. B. Sujit},
+  journal={ArXiv},
+  year={2020},
+  volume={abs/2007.10934}
+}
+```
 
 For any queries, please contact me via mail on sarthak16189@iiitd.ac.in
 
