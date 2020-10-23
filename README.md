@@ -33,7 +33,7 @@ This is a ROS workspace that creates a trajectory for a UAV to follow passing th
   year = {2018}
 }
 ```
-You may also want to look at the following paper (accepted at ICUAS 2020).
+You may also want to look at the following paper (accepted at ICUAS'20).
 ```
 @article{Bhagat2020UAVTT,
   title={UAV Target Tracking in Urban Environments Using Deep Reinforcement Learning},
