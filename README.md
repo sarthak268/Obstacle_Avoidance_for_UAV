@@ -1,4 +1,7 @@
 # Obstacle Avoidance Simulator for Unmanned Aerial Vehicles (UAVs)
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsarthak268%2FObstacle_Avoidance_for_UAV&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 This is a ROS workspace that creates a trajectory for a UAV to follow passing through a set of given waypoints and avoiding a set of given cylindrical obstacles, using a path planning algorithm. The testing is done through a node which plots the waypoints, obstacles and the current pose of UAV on RVIZ for examining the accuracy of the algorithm. 
 
 # Requirements :
