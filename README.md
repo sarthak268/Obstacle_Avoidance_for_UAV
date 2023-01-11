@@ -50,6 +50,6 @@ You may also want to look at the following paper (accepted at ICUAS'20).
 For any queries, please contact me via mail on sarthak16189@iiitd.ac.in
 
 # Support
-Like my work? Buy me a coffee: https://ko-fi.com/sarthakbhagat
+Like my work? Buy me a coffee: https://www.buymeacoffee.com/sarthakbhagat
 
 
